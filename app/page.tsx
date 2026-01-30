@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import ModuleCards from "@/components/ModuleCard";
 import ModuleTabs from "@/components/ModuleTabs";
 import Pricing from "@/components/Pricing";
+import Results from "@/components/Results";
 
 export default function Home() {
   return (
@@ -70,6 +71,7 @@ export default function Home() {
           type="recovery"
         />
         <Pricing />
+        <Results />
       </div>
     </main>
   );
