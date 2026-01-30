@@ -35,18 +35,18 @@ html {
 /* Custom Utilities */
 .frosted {
   backdrop-filter: blur(14px);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.096);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* .noise-overlay {
+.noise-overlay {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
   opacity: 0.04;
   pointer-events: none;
   z-index: 9999;
-} */
+}
 
 /* Custom scrollbar for that high-end look */
 ::-webkit-scrollbar { width: 8px; }

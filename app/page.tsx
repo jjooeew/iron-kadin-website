@@ -1,11 +1,13 @@
 import Hero from "@/components/Hero";
 import ModuleCards from "@/components/ModuleCard";
+import ModuleTabs from "@/components/ModuleTabs";
+import Pricing from "@/components/Pricing";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Hero />
-
+      <ModuleTabs />
       <div className="max-w-7xl mx-auto space-y-24 mt-24">
         <ModuleCards
           id="foundation"
@@ -67,6 +69,7 @@ export default function Home() {
           ]}
           type="recovery"
         />
+        <Pricing />
       </div>
     </main>
   );
