@@ -23,7 +23,7 @@ export default function ModuleTabs() {
         };
 
   return (
-    <div className='sticky top-24 z-40 max-w-4xl mx-auto px-4 py-8'>
+    <div className='top-24 z-40 max-w-4xl mx-auto px-4 py-8'>
         <div className='frosted rounded-full p-1 flex overflow-x-auto no-scrollbar shadow-2xl'>
             {tabs.map((tab) => (
                 <button
