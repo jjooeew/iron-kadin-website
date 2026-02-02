@@ -1,8 +1,10 @@
 "use client";
 
 import About from "@/components/About";
+import ApplyForm from "@/components/ApplyForm";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
+import Modal from "@/components/Modal";
 import ModuleCards from "@/components/ModuleCard";
 import ModuleTabs from "@/components/ModuleTabs";
 import Navbar from "@/components/Navbar";
@@ -12,6 +14,8 @@ import { useState } from "react";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<"home" | "apply">("home");
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
+
 
   return (
     <div className="min-h-screen bg-black">
@@ -20,7 +24,7 @@ export default function Home() {
         currentPage={currentPage}
       />
       <main className="relative pt-24 pb-20 px-4 md:px-0">
-        <Hero />
+        <Hero onApply={() => setIsApplyOpen(true)} />
         <ModuleTabs />
         <div className="max-w-7xl mx-auto space-y-24 mt-5">
           <ModuleCards
@@ -101,15 +105,19 @@ export default function Home() {
                 >
                   SCHEDULE CONSULT
                 </a>
-                <a
-                  href="#apply"
+                <button
+                  onClick={() => setIsApplyOpen(true)}
                   className="text-acid-lime hover:underline underline-offset-4 font-medium"
                 >
                   Or apply in 2 minutes
-                </a>
+                </button>
               </div>
             </div>
           </section>
+
+          <Modal isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)}>
+            <ApplyForm />
+          </Modal>  
         </div>
       </main>
     </div>

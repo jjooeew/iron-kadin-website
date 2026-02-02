@@ -1,7 +1,11 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-export default function Hero() {
+interface HeroProps {
+  onApply: () => void;
+}
+
+export default function Hero({ onApply }: HeroProps) {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row items-center gap-12">
       <div className="flex-1 text-center md:text-left">
@@ -22,8 +26,8 @@ export default function Hero() {
           settle.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
-          <a
-            href="#apply"
+          <button
+            onClick={onApply}
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-acid-lime text-black font-bold flex items-center justify-center gap-2 hover:shadow-glow transition-all group active:scale-95"
           >
             APPLY NOW
@@ -31,7 +35,7 @@ export default function Hero() {
               size={18}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </a>
+          </button>
           <a
             href="#foundation"
             className="text-white/60 hover:text-acid-lime flex items-center gap-2 transition-colors group"
@@ -53,7 +57,7 @@ export default function Hero() {
           className="w-full h-full object-cover rounded-2xl grayscale contrast-125"
         />
 
-        <div className="absolute bottom-8 left-8 z-20 frosted p-4 rounded-xl min-w-[160px] animate-bounce-subtle">
+        <div className="absolute bottom-8 left-8 z-20 frosted p-4 rounded-xl min-w-40 animate-bounce-subtle">
           <div className="text-[10px] text-white/50 mb-1">VO2 MAX PEAK</div>
           <div className="text-2xl font-display font-bold text-acid-lime">
             58.4 ml/kg
